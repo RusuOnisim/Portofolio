@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Navleft() {
   return (
-    <nav className="h-screen w-2/12 lg:w-1/12 flex flex-col justify-center bg-colorsecond text-white z-50">
+    <nav className="w-2/12 lg:w-1/12 flex flex-col justify-center bg-colorsecond text-white z-50">
       <img src={svg} className="mt-2 h-10 lg:h-14" alt="" />
       <section className="text-white h-full flex flex-col items-center justify-around text-xl">
         <NavLink

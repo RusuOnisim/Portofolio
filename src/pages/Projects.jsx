@@ -6,7 +6,7 @@ function Projects() {
       initial="hidden"
       animate="visible"
       variants={slideInAnimation}
-      className="bg-colorbg h-screen w-full"
+      className="bg-colorbg h-[100dvh] w-full"
     >
     
       Projects

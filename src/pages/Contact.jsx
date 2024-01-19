@@ -6,10 +6,10 @@ function Contact() {
       initial="hidden"
       animate="visible"
       variants={slideInAnimation}
-      className="bg-colorbg h-screen w-full"
+      className="bg-colorbg h-[100dvh] w-full"
     >
       {/* Your component content */}
-      Contact
+      Contactt
     </SlideInMotion>
   );
 }
