@@ -25,7 +25,7 @@ const LinkedInButton = ({ isDarkMode, openLinkedInProfile }) => {
         <FaLinkedin className="lg:text-[42px] text-3xl" />
       </motion.div>
       <motion.p className="lg:text-xl w-full flex pl-2 items-center justify-center text-[14px] tracking-[0.60rem]">
-        Linkedin
+        LinkedIn
       </motion.p>
     </motion.section>
   );
