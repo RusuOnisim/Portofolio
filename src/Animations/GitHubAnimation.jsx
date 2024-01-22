@@ -22,7 +22,7 @@ const GitHubAnimation = () => {
             key={`${animationKey}-${index}`}
             initial={{ x: 0, opacity: 1 }}
             animate={{ x: [-200, 0, 0, -200], opacity: [1, 1, 1, 1] }}
-            transition={{ ease: 'linear', duration: 5, repeat: Infinity }}
+            transition={{ ease: 'linear', duration: 5, repeat: Infinity ,}}
             style={{ display: 'inline-block' }}
           >
             {letter}

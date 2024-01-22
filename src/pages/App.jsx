@@ -11,6 +11,7 @@ import { useTheme } from "../components/ThemeContext";
 import PacmanIcon from "../components/PacmanIcon";
 import GitHubAnimation from "../Animations/GitHubAnimation";
 import LinkedInButton from "../components/Linkedin";
+import ToggleButton from "../components/ToggleButton";
 function App() {
   const { isDarkMode } = useTheme();
 
@@ -34,6 +35,7 @@ function App() {
         isDarkMode ? "colordarkbg" : "colorbrightbg z-0"
       } w-full overflow-hidden `}
     >
+       <ToggleButton />
       <main
         className={`h-[100dvh] w-full ${
           isDarkMode ? "bg-colordarkbg" : "bg-colorbrightbg"
