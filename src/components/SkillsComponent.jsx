@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 
 const SkillsComponent = ({ isDarkMode }) => {
   const skills = [
-    { name: 'Html', level: 95 },
-    { name: 'CSS', level: 90 },
-    { name: 'Tailwind', level: 85 },
     { name: 'React', level: 70 },
     { name: 'JavaScript', level: 55 },
     { name: 'TypeScript', level: 50 },
+    { name: 'Html', level: 95 },
+    { name: 'CSS', level: 85 },
+    { name: 'Tailwind', level: 90 },
   ];
 
   return (

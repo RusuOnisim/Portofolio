@@ -2,6 +2,7 @@ import darkModeSvg from "../assets/images/logooni.svg";
 import lightModeSvg from "../assets/images/logoonil.svg";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../components/ThemeContext";
+import ToggleButton from "./ToggleButton";
 
 export default function Navleft() {
   const { isDarkMode } = useTheme();
@@ -18,7 +19,7 @@ export default function Navleft() {
       <section
         className={`text-${
           isDarkMode ? "colordarklogo" : "colorbrightlogo"
-        } h-full flex flex-col items-center justify-evenly text-xl z-40`}
+        } h-full flex flex-col items-center justify-evenly text-xl z-40 relative`}
       >
         <NavLink
            className={`${isDarkMode ? "text-navcolor" : "text-colordarksecond"} ${
@@ -53,7 +54,9 @@ export default function Navleft() {
           to="/projects"
         >
           Projects
+        
         </NavLink>
+        <ToggleButton />
       </section>
     </nav>
   );

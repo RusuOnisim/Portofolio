@@ -1,13 +1,12 @@
 import { slideInAnimation, SlideInMotion } from "../Animations/Slide";
 import { useTheme } from "../components/ThemeContext";
-import { MdDevices } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
 import { IoRocket } from "react-icons/io5";
 import { MdOutlineSmartToy } from "react-icons/md";
 import { IoIosColorPalette } from "react-icons/io";
 import { HiMiniArrowSmallRight } from "react-icons/hi2";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ToggleButton from "../components/ToggleButton";
 import SkillsComponent from "../components/SkillsComponent";
 function About() {
   const [showWhoIAm, setShowWhoIAm] = useState(true);
@@ -85,13 +84,13 @@ function About() {
       initial="hidden"
       animate="visible"
       variants={slideInAnimation}
-      className={` h-[100dvh] w-full flex flex-col justify-evenly lg:block overflow-y-auto overflow-x-hidden ${
+      className={`h-[100dvh] w-full flex flex-col justify-evenly lg:block overflow-y-auto overflow-x-hidden ${
         isDarkMode ? "bg-colordarkbg" : "bg-colorbrightbg"
       }  `}
     >
-       <ToggleButton/>
+ 
       <motion.section
-        className="flex flex-col lg:flex-row h-3/8  w-full items-center justify-start lg:items-start mt-10 lg:mt-16"
+        className="flex flex-col lg:flex-row h-3/8  w-full items-center justify-start lg:items-start mt-5 lg:mt-10"
         initial="hidden"
         animate="visible"
         variants={containerVariantst}
@@ -107,20 +106,21 @@ function About() {
                 isDarkMode ? "text-colordarkbg" : "text-colorbrightbg"
               } hexagon flex items-center justify-center `}
             >
-              <MdDevices className="lg:text-6xl text-3xl" />
+              <FaEye className="lg:text-6xl text-3xl" />
             </section>
             <p
               className={`${
                 isDarkMode ? "text-gray-300" : "text-colorbrightsecond"
               } lg:text-2xl mt-1 lg:mb-2`}
             >
-              Responisve
+                  Design Sensibility
             </p>
             <p
               className={`${isDarkMode ? "text-gray-300/70" : "text-gray-600"}
              text-center mt-1 w-[92%] text-xs lg:text-lg`}
             >
-              My layouts will work on any device.
+                  I possess a strong sense of design and aesthetics.
+
             </p>
           </div>
 
@@ -140,13 +140,14 @@ function About() {
                 isDarkMode ? "text-gray-300" : "text-colorbrightsecond"
               } lg:text-2xl mt-1 lg:mb-2`}
             >
-              Dynamic
+              Quick Learner
             </p>
             <p
               className={`${isDarkMode ? "text-gray-300/70" : "text-gray-600"}
              text-center mt-1 w-[93%] text-xs lg:text-lg`}
             >
-              I love building dynamic web applications.
+                 I have a knack for rapidly grasping and mastering new concepts.
+
             </p>
           </div>
         </div>
@@ -253,15 +254,17 @@ function About() {
           </h1>
           <p
             className={`${isDarkMode ? "text-gray-300/70" : "text-gray-600"}
-            lg:mt-5 mt-3 w-[90%] text-center  lg:text-xl `}
+            lg:mt-5 mt-3 w-[90%] text-center  lg:text-xl text-[14px] `}
           >
-            {`Hi, I'm Onisim, and I've undergone a life-changing transition.
-          From working in a kitchen, I took the plunge and joined a coding
-          bootcamp. That's where I discovered my love for front-end
-          development. Over the past six months, I've been reshaping my life
-          and diving into the world of coding. Now, I'm hooked on creating
-          awesome websites and eager to keep improving. Change is good, and
-          I'm excited for the journey ahead!`}
+          {`Hi, I'm Onisim, and I've undergone a life-changing transition.
+      From working in a kitchen, I took the plunge and joined a coding
+      bootcamp. That's where I discovered my love for front-end
+      development. Over the past six months, I've been reshaping my life
+      and diving into the world of coding. Now, I'm hooked on creating
+      awesome websites and eager to keep improving. Change is good, and
+      I'm excited for the journey ahead! `}
+    {`With a keen eye for design, I ensure my creations are visually appealing.
+      Additionally, my fast-learning abilities help me adapt swiftly to new challenges.`}
           </p>
         </motion.section>
 
