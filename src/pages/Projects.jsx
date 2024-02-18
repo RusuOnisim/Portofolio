@@ -3,7 +3,7 @@ import { useTheme } from "../components/ThemeContext";
 import Hangman from "../assets/images/Hangmaan.jpg";
 import Quizz from "../assets/images/quizz.jpg";
 import Cinemania from "../assets/images/Cinemania.jpg";
-import Cookie from "../assets/images/Cookie.jpg";
+import Cookie from "../assets/images/clicker.png";
 import Overlay from "../components/Overlay";
 import { motion } from "framer-motion";
 import gamesw from "../assets/images/gamesw.png"
@@ -53,7 +53,7 @@ function Projects() {
       initial="hidden"
       animate="visible"
       variants={slideInAnimation}
-      className={` h-screen w-full overflow-y-auto overflow-x-hidden ${
+      className={` h-[100dvh] w-full overflow-y-auto overflow-x-hidden ${
         isDarkMode ? "bg-colordarkbg" : "bg-colorbrightbg"
       }  `}
     >

@@ -67,7 +67,7 @@ function About() {
       initial="hidden"
       animate="visible"
       variants={slideInAnimation}
-      className={`lg:h-[100dvh] h-screen pb-10 lg:pb-0 w-full flex flex-col lg:block overflow-y-auto overflow-x-hidden  ${
+      className={`h-[100dvh] pb-10 lg:pb-0 w-full flex flex-col lg:block overflow-y-auto overflow-x-hidden  ${
         isDarkMode ? "bg-colordarkbg" : "bg-colorbrightbg"
       }  `}
     >
