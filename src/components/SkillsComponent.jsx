@@ -11,7 +11,7 @@ const SkillsComponent = ({ isDarkMode }) => {
   ];
 
   return (
-    <div className={`mt-3 w-[90%] h-5/8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+    <div className={`mt-1 w-[90%] h-5/8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
       {skills.map((skill, index) => (
         <div key={index} className="lg:mb-4 mb-2">
           <p className="font-semibold">{skill.name}</p>

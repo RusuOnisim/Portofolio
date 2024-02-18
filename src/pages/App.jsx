@@ -3,6 +3,7 @@ import {
   SlideInMotion,
   slideInFromRightAnimation,
 } from "../Animations/Slide";
+import { useState } from 'react';
 import { motion } from "framer-motion";
 import darkModeSvg from "../assets/images/myphoto.svg";
 import lightModeSvg from "../assets/images/svvg.svg";
@@ -11,16 +12,43 @@ import { useTheme } from "../components/ThemeContext";
 import PacmanIcon from "../components/PacmanIcon";
 import GitHubAnimation from "../Animations/GitHubAnimation";
 import LinkedInButton from "../components/Linkedin";
+import ColorMe from "../assets/images/colorme.svg";
+
 function App() {
   const { isDarkMode } = useTheme();
+  const [mouseX, setMouseX] = useState(0);
+  const [containerWidth, setContainerWidth] = useState(0);
 
   const sentence = "Front-End Developer".split("");
   const sentence2 = "Based in Belgium".split("");
   const svg = isDarkMode ? darkModeSvg : lightModeSvg;
 
+  const handleMouseMove = (e) => {
+    const x = e.pageX - e.target.offsetLeft;
+    setMouseX(x);
+  };
+
+  const handleContainerRef = (node) => {
+    if (node) {
+      setContainerWidth(node.offsetWidth);
+    }
+  };
+
+  const calculateOpacity = () => {
+    const halfWidth = window.innerWidth ;
+    if (mouseX < halfWidth) {
+      return mouseX / halfWidth - 0.1;
+    } else {
+     return 1;
+    }
+  };
+
+  const opacity = calculateOpacity();
+
   const openGitHubProfile = () => {
     window.open("https://github.com/RusuOnisim", "_blank");
   };
+
   const openLinkedInProfile = () => {
     window.open("https://www.linkedin.com/in/onisim-rusu-2a4b57290/", "_blank");
   };
@@ -34,20 +62,19 @@ function App() {
         isDarkMode ? "colordarkbg" : "colorbrightbg z-0"
       } w-full overflow-hidden `}
     >
-
-      <main
+      <main 
+       ref={handleContainerRef}
         className={`h-[100dvh] w-full ${
           isDarkMode ? "bg-colordarkbg" : "bg-colorbrightbg"
         } flex lg:flex-row flex-col-reverse z-0`}
       >
         {/* My Image Section */}
-
-        <section className="sm:w-2/3 lg:h-full w-full h-auto flex flex-col justify-end self-end">
+        <section className="sm:w-2/3 relative lg:h-full w-full h-auto flex flex-col justify-end self-end" onMouseMove={handleMouseMove}>
           <img src={svg} className="w-full overflow-hidden" alt="" />
+          <img src={ColorMe} className="absolute h-full w-full lg:flex hidden " alt="" style={{ opacity: opacity }} />
         </section>
-
+       
         {/* Text Section  */}
-
         <section className="lg:w-1/2 lg:h-full pt-5 h-1/2 justify-start w-full flex flex-col lg:justify-center px-5">
           <motion.div
             variants={slideInFromRightAnimation}
@@ -56,7 +83,6 @@ function App() {
             className="flex flex-col w-full h-1/2 items-start"
           >
             {/* Front-End Title */}
-
             <span className="flex flex-row items-center justify-start">
               <h1
                 className={`2xl:text-5xl md:text-4xl lg:text-3xl text-xl ${
@@ -77,7 +103,6 @@ function App() {
             </span>
 
             {/* Based in Belgium title */}
-
             <h2
               className={`2xl:text-7xl md:text-5xl text-3xl  pt-3 ${
                 isDarkMode ? "text-gray-300" : "text-colorbrightsecond"
@@ -91,7 +116,6 @@ function App() {
             </h2>
 
             {/* Description Section */}
-
             <div className="ml-0.5 lg:ml-1">
               <p
                 className={`text-gray-300/70 text-[14px] md:text-xl pt-4 pr-[10%] ${
@@ -105,7 +129,6 @@ function App() {
               </p>
 
               {/* Email */}
-
               <p
                 className={`lg:pt-4 pt-2 text-lg md:text-2xl text-${
                   isDarkMode ? "colordarklogo" : "colorbrightlogo"
@@ -116,10 +139,8 @@ function App() {
             </div>
 
             {/* Button Social Section */}
-
             <div className="flex flex-col lg:flex-row ">
               {/* Github Button */}
-
               <section
                 className={`flex items-center justify-center py-2 px-2 bg-${
                   isDarkMode ? "colordarksecond" : "navcolor"
@@ -133,7 +154,6 @@ function App() {
               </section>
 
               {/* Linkedin button */}
-
               <LinkedInButton isDarkMode={isDarkMode} openLinkedInProfile={openLinkedInProfile} />
             </div>
           </motion.div>
