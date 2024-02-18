@@ -5,9 +5,14 @@ export default {
     extend: {
       writingMode: ['vertical-rl', 'vertical-lr'],
       colors: {
-        colorbg: "#333333",
-        colorsecond: "#1f1f1f",
-        colorlogo: "#878cc5"
+        colordarkbg: "#333333",
+        colordarksecond: "#1f1f1f",
+        colordarklogo: "#878cc5",
+
+        colorbrightbg: "#cccccc",
+        colorbrightsecond: "#004953",
+        colorbrightlogo: "#008080",
+        navcolor:"#b2b2b2",
       },
     },
   },

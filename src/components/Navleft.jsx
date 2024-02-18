@@ -1,39 +1,62 @@
-import svg from "../assets/images/logooni.svg";
+import darkModeSvg from "../assets/images/logooni.svg";
+import lightModeSvg from "../assets/images/logoonil.svg";
 import { NavLink } from "react-router-dom";
+import { useTheme } from "../components/ThemeContext";
+import ToggleButton from "./ToggleButton";
 
 export default function Navleft() {
+  const { isDarkMode } = useTheme();
+
+  const svgSource = isDarkMode ? darkModeSvg : lightModeSvg;
+
   return (
-    <nav className="w-2/12 lg:w-1/12 flex flex-col justify-center bg-colorsecond text-white z-50">
-      <img src={svg} className="mt-2 h-10 lg:h-14" alt="" />
-      <section className="text-white h-full flex flex-col items-center justify-around text-xl">
+    <nav
+      className={`w-2/12 lg:w-1/12 flex flex-col justify-center ${
+        isDarkMode ? "bg-colordarksecond" : "bg-navcolor"
+      }  z-40`}
+    >
+      <img src={svgSource} className="mt-2 h-10 lg:h-14" alt="" />
+      <section
+        className={`text-${
+          isDarkMode ? "colordarklogo" : "colorbrightlogo"
+        } h-full flex flex-col items-center justify-evenly text-xl z-40 relative`}
+      >
         <NavLink
-          className="text-white aria-[current=page]:text-colorlogo"
+           className={`${isDarkMode ? "text-navcolor" : "text-colordarksecond"} ${
+            isDarkMode
+              ? "aria-[current=page]:text-colordarklogo"
+              : "aria-[current=page]:text-colorbrightlogo"
+          }`}
           id="side"
           to="/"
         >
           Home
         </NavLink>
         <NavLink
-          className="text-white aria-[current=page]:text-colorlogo"
+           className={`${isDarkMode ? "text-navcolor" : "text-colordarksecond"} ${
+            isDarkMode
+              ? "aria-[current=page]:text-colordarklogo"
+              : "aria-[current=page]:text-colorbrightlogo"
+          }`}
           id="side"
           to="/about"
         >
           About
         </NavLink>
+      
         <NavLink
-          className="text-white aria-[current=page]:text-colorlogo"
-          id="side"
-          to="/contact"
-        >
-          Contact
-        </NavLink>
-        <NavLink
-          className="text-white aria-[current=page]:text-colorlogo"
+          className={`${isDarkMode ? "text-navcolor" : "text-colordarksecond"} ${
+            isDarkMode
+              ? "aria-[current=page]:text-colordarklogo"
+              : "aria-[current=page]:text-colorbrightlogo"
+          }`}
           id="side"
           to="/projects"
         >
           Projects
+        
         </NavLink>
+        <ToggleButton />
       </section>
     </nav>
   );
